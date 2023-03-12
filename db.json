@@ -1,0 +1,86 @@
+{
+  "admin": [
+    {
+      "name": "john",
+      "email": "john@gmail.com",
+      "password": "John12@",
+      "cpassword": "John12@",
+      "gender": "male",
+      "teamselect": "wordpress",
+      "roleselect": "user",
+      "picker": "2001-11-14T17:30:00.000Z",
+      "reading": true,
+      "swimming": false,
+      "cooking": true,
+      "created_at": "2023-03-11T13:01:38.938Z",
+      "updated_at": "2023-03-11T13:01:38.938Z",
+      "id": 1
+    },
+    {
+      "name": "aung",
+      "email": "aung@gmail.com",
+      "password": "Aung12@",
+      "cpassword": "Aung12@",
+      "gender": "male",
+      "teamselect": "wordpress",
+      "roleselect": "user",
+      "picker": "2023-03-14T17:30:00.000Z",
+      "reading": false,
+      "swimming": true,
+      "cooking": false,
+      "created_at": "2023-03-11T16:11:07.667Z",
+      "updated_at": "2023-03-11T16:11:07.667Z",
+      "id": 2
+    }
+  ],
+  "user": [
+    {
+      "name": "John Doe",
+      "email": "john@gmail.com",
+      "password": "John12@",
+      "cpassword": "John12@",
+      "gender": "male",
+      "teamselect": "nodejs",
+      "roleselect": "member",
+      "picker": "2000-06-23T17:30:00.000Z",
+      "reading": true,
+      "swimming": true,
+      "cooking": false,
+      "created_at": "2023-03-12T13:46:24.718Z",
+      "updated_at": "2023-03-12T13:46:24.718Z",
+      "id": 1
+    },
+    {
+      "name": "Jane Doe",
+      "email": "jane@gmail.com",
+      "password": "Jane12@",
+      "cpassword": "Jane12@",
+      "gender": "female",
+      "teamselect": "php",
+      "roleselect": "manager",
+      "picker": "1997-10-13T17:30:00.000Z",
+      "reading": true,
+      "swimming": false,
+      "cooking": true,
+      "created_at": "2023-03-12T13:48:48.341Z",
+      "updated_at": "2023-03-12T13:48:48.341Z",
+      "id": 2
+    },
+    {
+      "name": "Lily",
+      "email": "lily@gmail.com",
+      "password": "Lily12@",
+      "cpassword": "Lily12@",
+      "gender": "female",
+      "teamselect": "wordpress",
+      "roleselect": "member",
+      "picker": "1994-07-12T17:30:00.000Z",
+      "reading": true,
+      "swimming": false,
+      "cooking": false,
+      "created_at": "2023-03-12T13:58:06.813Z",
+      "updated_at": "2023-03-12T13:58:06.813Z",
+      "id": 3
+    }
+  ]
+}

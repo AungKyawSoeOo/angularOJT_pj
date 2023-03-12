@@ -1,0 +1,42 @@
+.register-form {
+    background-color: #d2cccc;
+    border-radius: 5px;
+    width: 60%;
+    display: block;
+    margin: 20px auto;
+    padding: 20px 5px;
+
+    .blogin{
+        margin-left: 10%;
+    }
+
+    .check {
+        margin-left: 10%;
+    }
+
+    .check-div{
+        margin-left:10%;
+    }
+
+    .input-field,
+    .select-field,
+    .datepick,
+    .textarea,
+    .register-button {
+        width: 80%;
+        margin: 20px auto;
+        display: block;
+    }
+
+    .radio-gp {
+        margin-left: 10%;
+
+        .male-radio{
+            margin-left: 5%;
+        }
+
+        .female-radio {
+            margin-left: 5%;
+        }
+    }
+}

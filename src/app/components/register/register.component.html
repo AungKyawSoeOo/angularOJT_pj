@@ -1,0 +1,92 @@
+<form action="" [formGroup]="registerForm" (ngSubmit)="register()" class="register-form">
+  <mat-form-field class="input-field">
+    <mat-label>Name</mat-label>
+    <input matInput type="text" formControlName="name" />
+    <mat-error *ngIf="getName && getName.invalid && getName.touched && getName.errors?.['required']">Name is
+      requied</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email" />
+    <mat-error *ngIf="getEmail && getEmail.invalid && getEmail.touched && getEmail.errors?.['required']">Email is
+      required</mat-error>
+    <mat-error *ngIf="getEmail && getEmail.invalid && getEmail.touched && !getEmail.errors?.['required']">Email is
+      invalid</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <input matInput [type]="showPassword ? 'text' : 'password'" placeholder="Password" formControlName="password" />
+    <mat-icon matSuffix (click)="showPassword = !showPassword">{{
+      showPassword ? "visibility_off" : "visibility"
+      }}</mat-icon>
+    <mat-error *ngIf="getPassword?.invalid && getPassword?.touched && getPassword?.errors?.['required']">Password is
+      required</mat-error>
+    <mat-error *ngIf="getPassword?.invalid && getPassword?.touched && !getPassword?.errors?.['required']">Password
+      should contain 1 capital letter, 1 small letter, 1 number, 1
+      special character (total at least 5)</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <input matInput [type]="confirmshowPassword ? 'text' : 'password'" placeholder="Confirm Password"
+      formControlName="cpassword" />
+    <mat-icon matSuffix (click)="confirmshowPassword = !confirmshowPassword">{{
+      confirmshowPassword ? "visibility_off" : "visibility"
+      }}</mat-icon>
+    <mat-error
+      *ngIf="getConfirmPassword?.invalid && getConfirmPassword?.touched && getConfirmPassword?.errors?.['required']">Password
+      is required</mat-error>
+    <mat-error
+      *ngIf="getConfirmPassword?.invalid && getConfirmPassword?.touched && !getConfirmPassword?.errors?.['required']">
+      Confirm Password should same as password
+    </mat-error>
+  </mat-form-field>
+
+  <mat-radio-group aria-label="Select an option" class="radio-gp" formControlName="gender">
+    <mat-label>Gender </mat-label>
+    <mat-radio-button value="male" class="male-radio">Male</mat-radio-button>
+    <mat-radio-button value="female" class="female-radio">Female</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-form-field appearance="fill" class="select-field">
+    <mat-label>Team</mat-label>
+    <mat-select formControlName="teamselect">
+      <mat-option *ngFor="let team of teams" [value]="team.value">
+        {{ team.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="select-field">
+    <mat-label>Role</mat-label>
+    <mat-select formControlName="roleselect">
+      <mat-option *ngFor="let role of roles" [value]="role.value">
+        {{ role.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="check-div">
+    <mat-label>Hobbies</mat-label>
+    <mat-checkbox formControlName="reading">Reading</mat-checkbox>
+    <mat-checkbox formControlName="swimming">Swimming</mat-checkbox>
+    <mat-checkbox formControlName="cooking">Cooking</mat-checkbox>
+  </div>
+
+  <mat-form-field class="datepick">
+    <input matInput [matDatepicker]="picker" placeholder="Date of Birth" formControlName="picker" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="getDate!.invalid && getDate!.touched && getDate?.errors?.['required']">Choose your
+      birthday</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="textarea">
+    <textarea matInput placeholder="Description" maxlength="1500" rows="4"></textarea>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" class="register-button" [disabled]="registerForm.invalid">
+    Register
+  </button>
+  <a href="/login" class="blogin">Back to login</a>
+</form>

@@ -1,0 +1,17 @@
+.login-form {
+    background-color: #d2cccc;
+    border-radius: 5px;
+    width: 60%;
+    display: block;
+    margin: 20px auto;
+    padding: 20px 5px;
+    .input-field,
+    .login-button {
+        width: 80%;
+        margin: 20px auto;
+        display: block;
+    }
+    .rlink{
+        margin-left: 10%;
+    }
+}

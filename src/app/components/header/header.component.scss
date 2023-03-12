@@ -1,0 +1,35 @@
+.nav {
+    padding: 10px 10px 50px;
+    background-color: #302c2c;
+    .nav-icon {
+        float: left;
+        color:#ffffff;
+    }
+
+    ul {
+        float: right;
+        li {
+            float: left;
+            margin-right: 20px;
+            list-style-type: none;
+        a{
+            text-decoration: none;
+            color:#ffffff;
+            font-size: 17px;
+        }
+        a.active-link{
+            color:#e9980b;
+        }
+        a:hover{
+            color:#bb9046;
+            cursor:pointer;
+        }
+        }
+    }
+}
+
+.clearfix{
+    display: block;
+    clear: both;
+    content: "";
+}

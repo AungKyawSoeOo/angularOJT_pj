@@ -1,0 +1,24 @@
+<form action="" [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
+  <mat-form-field class="input-field">
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email"><br>
+    <mat-error *ngIf="getEmail && getEmail.invalid && getEmail.touched && getEmail.errors?.['required']">Email is required</mat-error>
+    <mat-error *ngIf="getEmail && getEmail.invalid && getEmail.touched && !getEmail.errors?.['required']">Enter a valid email</mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="input-field">
+    <mat-label>Password</mat-label>
+    <input matInput type="{{hidePassword ? 'password' : 'text'}}" formControlName="password">
+    <button type="button" mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
+      <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+    <mat-error *ngIf="getPassword && getPassword.invalid && getPassword.touched && getPassword.errors?.['required']">
+      Password is required
+    </mat-error>
+    <mat-error *ngIf="getPassword && getPassword.invalid && getPassword.touched && !getPassword.errors?.['required']">
+      Password should be at least 5
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button color="primary" class="login-button" [disabled]="loginForm.invalid">Login</button>
+  <a routerLink="/register" class="rlink">Register Here</a>
+</form>
