@@ -8,5 +8,6 @@ export interface User {
     dob: Date;
     createdAt: Date;
     deleted?: boolean;
+    description?:string,
     hobbies: string[];
 }

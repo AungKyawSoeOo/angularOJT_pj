@@ -16,6 +16,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { HeaderComponent } from './components/header/header.component';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { UpdateComponent } from './components/update/update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { UserListComponent } from './components/user-list/user-list.component';
     LoginComponent,
     AddUserComponent,
     HeaderComponent,
-    UserListComponent
+    UserListComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

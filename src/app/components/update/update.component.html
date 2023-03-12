@@ -1,0 +1,70 @@
+<app-header></app-header>
+<form class="register-form">
+    <mat-form-field class="input-field">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" name="name" [(ngModel)]="userForm.name" />
+    </mat-form-field>
+
+    <mat-form-field class="input-field">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" name="email" [(ngModel)]="userForm.email"/>
+    </mat-form-field>
+
+    <mat-form-field class="input-field">
+        <input matInput [type]="showPassword ? 'text' : 'password'" placeholder="Password" name="password" [(ngModel)]="userForm.password"/>
+        <mat-icon matSuffix (click)="showPassword = !showPassword">{{
+            showPassword ? "visibility_off" : "visibility"
+            }}</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field class="input-field">
+        <input matInput [type]="confirmshowPassword ? 'text' : 'password'" placeholder="Confirm Password" name="cpassword" [(ngModel)]="userForm.cpassword"/>
+        <mat-icon matSuffix (click)="confirmshowPassword = !confirmshowPassword">{{
+            confirmshowPassword ? "visibility_off" : "visibility"
+            }}</mat-icon>
+    </mat-form-field>
+
+    <mat-radio-group aria-label="Select an option" class="radio-gp" name="gender" [(ngModel)]="userForm.gender">
+        <mat-label>Gender </mat-label>
+        <mat-radio-button value="male" class="male-radio">Male</mat-radio-button>
+        <mat-radio-button value="female" class="female-radio">Female</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field appearance="fill" class="select-field">
+        <mat-label>Team</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let team of teams" [value]="team.value">
+            {{ team.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="select-field">
+        <mat-label>Role</mat-label>
+        <mat-select name="roleSelect" [(ngModel)]="selectedRole">
+          <mat-option *ngFor="let role of roles" [value]="role.value">
+            {{ role.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="check-div">
+        <mat-label>Hobbies</mat-label>
+        <mat-checkbox [checked]="userForm.reading">Reading</mat-checkbox>
+        <mat-checkbox [checked]="userForm.swimming">Swimming</mat-checkbox>
+        <mat-checkbox [checked]="userForm.cooking">Cooking</mat-checkbox>
+    </div>
+
+    <mat-form-field class="datepick">
+        <input matInput [matDatepicker]="picker" placeholder="Date of Birth" name="picker" [(ngModel)]="userForm.picker"/>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="textarea">
+        <textarea matInput placeholder="Description" maxlength="1500" rows="4" name="description" [(ngModel)]="userForm.description"></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="register-button">
+        Update User
+    </button>
+</form>

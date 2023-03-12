@@ -49,6 +49,7 @@ export class AddUserComponent {
     teamselect: new FormControl('', Validators.required),
     roleselect: new FormControl('', Validators.required),
     picker: new FormControl('',Validators.required),
+    description: new FormControl(''),
     reading: new FormControl(false),
     swimming: new FormControl(false),
     cooking: new FormControl(false)

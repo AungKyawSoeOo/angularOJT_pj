@@ -23,6 +23,14 @@ export class UserService {
     return this.http.post(this.apiurl, user);
   }
 
+  getById(id:any):Observable<any>{
+    return this.http.get(`${this.apiurl}/${id}`);
+  }
+
+  updateUser(user:any):Observable<any>{
+    return this.http.put(`${this.apiurl}/${user.id}`,user);
+  }
+
   deleteUser(id:any):Observable<any>{
     return this.http.delete(`${this.apiurl}/${id}`);
   }
